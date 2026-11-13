@@ -1,0 +1,225 @@
+{
+  "generated_at_utc": "2026-11-02T04:11:44+00:00",
+  "environment": {
+    "spark": "3.5.3",
+    "pyspark": "3.5.3",
+    "python": "3.13.15",
+    "on_kaggle": true
+  },
+  "data": {
+    "source": "Sentiment140 (kazanova/sentiment140)",
+    "rows_after_dedup": 1580889,
+    "rows_used": 600931,
+    "split": {
+      "train": 421089,
+      "validation": 59869,
+      "test": 119973
+    },
+    "label_map": {
+      "0": "negative",
+      "1": "positive"
+    }
+  },
+  "features": {
+    "ngrams": "unigrams + bigrams",
+    "vocab_size": 83808,
+    "min_doc_freq": 5,
+    "negations_kept_out_of_stopwords": [
+      "never",
+      "no",
+      "nor",
+      "not",
+      "*n't"
+    ]
+  },
+  "models": {
+    "lr": {
+      "name": "Logistic Regression",
+      "tuned_param": "regParam",
+      "tuned_value": 3e-05,
+      "val_f1": 0.7772,
+      "train_seconds": 34.9,
+      "accuracy": 0.776,
+      "precision": 0.7761,
+      "recall": 0.776,
+      "f1": 0.7759,
+      "auc": 0.8458,
+      "confusion_matrix": [
+        [
+          45380,
+          14229
+        ],
+        [
+          12649,
+          47715
+        ]
+      ]
+    },
+    "svm": {
+      "name": "Linear SVM",
+      "tuned_param": "regParam",
+      "tuned_value": 3e-05,
+      "val_f1": 0.7766,
+      "train_seconds": 66.2,
+      "accuracy": 0.7765,
+      "precision": 0.7769,
+      "recall": 0.7765,
+      "f1": 0.7764,
+      "auc": 0.8446,
+      "confusion_matrix": [
+        [
+          45016,
+          14593
+        ],
+        [
+          12219,
+          48145
+        ]
+      ]
+    },
+    "nb": {
+      "name": "Naive Bayes",
+      "tuned_param": "smoothing",
+      "tuned_value": 1.0,
+      "val_f1": 0.7709,
+      "train_seconds": 1.1,
+      "accuracy": 0.7699,
+      "precision": 0.77,
+      "recall": 0.7699,
+      "f1": 0.7699,
+      "auc": 0.8356,
+      "confusion_matrix": [
+        [
+          46299,
+          13310
+        ],
+        [
+          14290,
+          46074
+        ]
+      ]
+    }
+  },
+  "tuning_log": [
+    {
+      "classifier": "Logistic Regression",
+      "regParam": 1e-06,
+      "val_f1": 0.7604,
+      "fit_seconds": 38.9
+    },
+    {
+      "classifier": "Logistic Regression",
+      "regParam": 3e-06,
+      "val_f1": 0.763,
+      "fit_seconds": 37.6
+    },
+    {
+      "classifier": "Logistic Regression",
+      "regParam": 1e-05,
+      "val_f1": 0.769,
+      "fit_seconds": 36.2
+    },
+    {
+      "classifier": "Logistic Regression",
+      "regParam": 3e-05,
+      "val_f1": 0.7772,
+      "fit_seconds": 34.9
+    },
+    {
+      "classifier": "Linear SVM",
+      "regParam": 1e-06,
+      "val_f1": 0.7718,
+      "fit_seconds": 70.1
+    },
+    {
+      "classifier": "Linear SVM",
+      "regParam": 3e-06,
+      "val_f1": 0.7734,
+      "fit_seconds": 67.9
+    },
+    {
+      "classifier": "Linear SVM",
+      "regParam": 1e-05,
+      "val_f1": 0.7754,
+      "fit_seconds": 67.7
+    },
+    {
+      "classifier": "Linear SVM",
+      "regParam": 3e-05,
+      "val_f1": 0.7766,
+      "fit_seconds": 66.2
+    },
+    {
+      "classifier": "Naive Bayes",
+      "smoothing": 0.1,
+      "val_f1": 0.77,
+      "fit_seconds": 2.4
+    },
+    {
+      "classifier": "Naive Bayes",
+      "smoothing": 0.3,
+      "val_f1": 0.7702,
+      "fit_seconds": 1.1
+    },
+    {
+      "classifier": "Naive Bayes",
+      "smoothing": 1.0,
+      "val_f1": 0.7709,
+      "fit_seconds": 1.1
+    }
+  ],
+  "deployed_classifier": "lr",
+  "neutral_band": {
+    "default_margin": 0.1,
+    "table": [
+      {
+        "margin": 0.0,
+        "neutral_if_p_between": "0.50 - 0.50",
+        "coverage": 1.0,
+        "accuracy_on_covered": 0.776
+      },
+      {
+        "margin": 0.05,
+        "neutral_if_p_between": "0.45 - 0.55",
+        "coverage": 0.9528,
+        "accuracy_on_covered": 0.7885
+      },
+      {
+        "margin": 0.1,
+        "neutral_if_p_between": "0.40 - 0.60",
+        "coverage": 0.9028,
+        "accuracy_on_covered": 0.8018
+      },
+      {
+        "margin": 0.15,
+        "neutral_if_p_between": "0.35 - 0.65",
+        "coverage": 0.8415,
+        "accuracy_on_covered": 0.8153
+      },
+      {
+        "margin": 0.2,
+        "neutral_if_p_between": "0.30 - 0.70",
+        "coverage": 0.7876,
+        "accuracy_on_covered": 0.8276
+      },
+      {
+        "margin": 0.25,
+        "neutral_if_p_between": "0.25 - 0.75",
+        "coverage": 0.7289,
+        "accuracy_on_covered": 0.8394
+      },
+      {
+        "margin": 0.3,
+        "neutral_if_p_between": "0.20 - 0.80",
+        "coverage": 0.6648,
+        "accuracy_on_covered": 0.851
+      }
+    ],
+    "note": "Uncertainty band, not a trained neutral class."
+  },
+  "batch_scoring_throughput": {
+    "rows": 119973,
+    "seconds": 3.87,
+    "rows_per_second": 31010.1
+  }
+}

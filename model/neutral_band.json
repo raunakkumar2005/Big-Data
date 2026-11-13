@@ -1,0 +1,47 @@
+{
+  "default_margin": 0.1,
+  "table": [
+    {
+      "margin": 0.0,
+      "neutral_if_p_between": "0.50 - 0.50",
+      "coverage": 1.0,
+      "accuracy_on_covered": 0.776
+    },
+    {
+      "margin": 0.05,
+      "neutral_if_p_between": "0.45 - 0.55",
+      "coverage": 0.9528,
+      "accuracy_on_covered": 0.7885
+    },
+    {
+      "margin": 0.1,
+      "neutral_if_p_between": "0.40 - 0.60",
+      "coverage": 0.9028,
+      "accuracy_on_covered": 0.8018
+    },
+    {
+      "margin": 0.15,
+      "neutral_if_p_between": "0.35 - 0.65",
+      "coverage": 0.8415,
+      "accuracy_on_covered": 0.8153
+    },
+    {
+      "margin": 0.2,
+      "neutral_if_p_between": "0.30 - 0.70",
+      "coverage": 0.7876,
+      "accuracy_on_covered": 0.8276
+    },
+    {
+      "margin": 0.25,
+      "neutral_if_p_between": "0.25 - 0.75",
+      "coverage": 0.7289,
+      "accuracy_on_covered": 0.8394
+    },
+    {
+      "margin": 0.3,
+      "neutral_if_p_between": "0.20 - 0.80",
+      "coverage": 0.6648,
+      "accuracy_on_covered": 0.851
+    }
+  ]
+}

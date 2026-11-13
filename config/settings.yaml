@@ -1,0 +1,32 @@
+app:
+  neutral_margin: 0.1
+  negative_alert_threshold: 0.5
+  keywords: []
+  profanity_mask: true
+
+sources:
+  bluesky_endpoint: "wss://jetstream2.us-east.bsky.network/subscribe?wantedCollections=app.bsky.feed.post"
+  hackernews_poll_seconds: 30
+
+replay:
+  posts_per_second: 2
+  loop: false
+
+streaming:
+  watermark: "2 minutes"
+  sliding_windows: false
+  reservoir_sampling: false
+  reservoir_size: 1000
+  sampling_threshold: 100
+  checkpoint_dir: "/tmp/sentiment-tracker-checkpoint"
+
+storage:
+  cassandra_keyspace: sentiment
+  cassandra_host: cassandra
+  cassandra_port: 9042
+  kafka_bootstrap_servers: kafka:9092
+  kafka_topic: social_posts
+
+dashboard:
+  refresh_seconds: 5
+  data_backend: cassandra

@@ -1,0 +1,246 @@
+{
+  "positive": [
+    [
+      "can't wait",
+      0.752
+    ],
+    [
+      "chat last",
+      0.734
+    ],
+    [
+      "no problem",
+      0.69
+    ],
+    [
+      "no worries",
+      0.671
+    ],
+    [
+      "cant wait",
+      0.619
+    ],
+    [
+      "hooky",
+      0.597
+    ],
+    [
+      "go someday",
+      0.595
+    ],
+    [
+      "crackle",
+      0.581
+    ],
+    [
+      "oh yeahh",
+      0.571
+    ],
+    [
+      "work unless",
+      0.566
+    ],
+    [
+      "not worried",
+      0.563
+    ],
+    [
+      "ain't bad",
+      0.562
+    ],
+    [
+      "not bad",
+      0.561
+    ],
+    [
+      "thank",
+      0.56
+    ],
+    [
+      "sad sad",
+      0.56
+    ],
+    [
+      "give want",
+      0.548
+    ],
+    [
+      "see yah",
+      0.546
+    ],
+    [
+      "enjoying sunday",
+      0.543
+    ],
+    [
+      "look lovely",
+      0.538
+    ],
+    [
+      "american pie",
+      0.534
+    ],
+    [
+      "lifeguard",
+      0.525
+    ],
+    [
+      "sun good",
+      0.522
+    ],
+    [
+      "not scared",
+      0.519
+    ],
+    [
+      "norwegian national",
+      0.515
+    ],
+    [
+      "might want",
+      0.512
+    ],
+    [
+      "thanks",
+      0.51
+    ],
+    [
+      "moment going",
+      0.508
+    ],
+    [
+      "beckie",
+      0.507
+    ],
+    [
+      "finally awake",
+      0.506
+    ],
+    [
+      "heard air",
+      0.504
+    ]
+  ],
+  "negative": [
+    [
+      "sad",
+      -1.056
+    ],
+    [
+      "miss",
+      -0.781
+    ],
+    [
+      "wish",
+      -0.693
+    ],
+    [
+      "not happy",
+      -0.626
+    ],
+    [
+      "can't",
+      -0.624
+    ],
+    [
+      "sat home",
+      -0.613
+    ],
+    [
+      "missing",
+      -0.613
+    ],
+    [
+      "ruined",
+      -0.592
+    ],
+    [
+      "passed away",
+      -0.591
+    ],
+    [
+      "bummed",
+      -0.591
+    ],
+    [
+      "unfortunately",
+      -0.581
+    ],
+    [
+      "sucks",
+      -0.577
+    ],
+    [
+      "dontyouhate",
+      -0.569
+    ],
+    [
+      "connor chronicles",
+      -0.556
+    ],
+    [
+      "poor",
+      -0.553
+    ],
+    [
+      "buu",
+      -0.553
+    ],
+    [
+      "getting texts",
+      -0.548
+    ],
+    [
+      "rest peace",
+      -0.538
+    ],
+    [
+      "someone share",
+      -0.533
+    ],
+    [
+      "actually cry",
+      -0.53
+    ],
+    [
+      "sick",
+      -0.53
+    ],
+    [
+      "not good",
+      -0.517
+    ],
+    [
+      "dannygokeyislove",
+      -0.517
+    ],
+    [
+      "depressed",
+      -0.516
+    ],
+    [
+      "lol lucky",
+      -0.513
+    ],
+    [
+      "misplaced",
+      -0.511
+    ],
+    [
+      "wit sum",
+      -0.51
+    ],
+    [
+      "sadly",
+      -0.504
+    ],
+    [
+      "headache",
+      -0.503
+    ],
+    [
+      "show see",
+      -0.502
+    ]
+  ]
+}

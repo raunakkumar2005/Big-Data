@@ -1,0 +1,100 @@
+services:
+  kafka:
+    image: apache/kafka:3.8.1
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: controller,broker
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_LISTENERS: INTERNAL://:9092,CONTROLLER://:9093,EXTERNAL://:9094
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,EXTERNAL://127.0.0.1:9094
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+    ports:
+      - "9094:9094"
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list"]
+      interval: 10s
+      timeout: 30s
+      retries: 12
+
+  kafka-init:
+    image: apache/kafka:3.8.1
+    depends_on:
+      kafka:
+        condition: service_healthy
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic social_posts --partitions 1 --replication-factor 1
+
+  cassandra:
+    image: cassandra:5.0.2
+    environment:
+      MAX_HEAP_SIZE: 1G
+      HEAP_NEWSIZE: 256M
+    ports:
+      - "9042:9042"
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh localhost 9042 -e 'describe keyspaces'"]
+      interval: 20s
+      timeout: 10s
+      retries: 15
+
+  cassandra-init:
+    image: cassandra:5.0.2
+    depends_on:
+      cassandra:
+        condition: service_healthy
+    volumes:
+      - ./storage/cassandra_schema.cql:/schema.cql:ro
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["cqlsh cassandra 9042 -f /schema.cql"]
+
+  spark-submit:
+    build:
+      context: .
+      dockerfile: Dockerfile.spark
+    profiles: ["streaming"]
+    depends_on:
+      kafka:
+        condition: service_healthy
+      kafka-init:
+        condition: service_completed_successfully
+      cassandra:
+        condition: service_healthy
+      cassandra-init:
+        condition: service_completed_successfully
+    volumes:
+      - .:/opt/sentiment-tracker
+    working_dir: /opt/sentiment-tracker
+    environment:
+      CASSANDRA_HOST: cassandra
+      CASSANDRA_PORT: "9042"
+      SPARK_VERSION: 3.5.3
+    command:
+      - /opt/spark/bin/spark-submit
+      - --packages
+      - org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.3,com.datastax.spark:spark-cassandra-connector_2.12:3.5.1
+      - streaming/stream_job.py
+
+  dashboard:
+    image: python:3.11-slim
+    depends_on:
+      cassandra:
+        condition: service_healthy
+      cassandra-init:
+        condition: service_completed_successfully
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      CASSANDRA_HOST: cassandra
+      CASSANDRA_PORT: "9042"
+      DATA_BACKEND: cassandra
+    command: sh -c "pip install -r dashboard/requirements.txt && streamlit run dashboard/app.py --server.address=0.0.0.0"
+    ports:
+      - "8501:8501"

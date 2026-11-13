@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.SQLTransformer","timestamp":1793592688287,"sparkVersion":"3.5.3","uid":"SQLTransformer_919f486ebcef","paramMap":{"statement":"SELECT *, concat(filtered, bigrams) AS terms FROM __THIS__"},"defaultParamMap":{}}
