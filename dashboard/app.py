@@ -28,6 +28,8 @@ DEFAULT_TOPICS = {
     "Food": ("food", "lunch", "dinner", "restaurant", "coffee", "meal"),
     "Sports": ("football", "soccer", "cricket", "sports", "game", "team", "match"),
     "Shopping": ("buy", "sale", "price", "order", "shopping", "product"),
+    "Elections": ("election", "vote", "voting", "debate", "candidate", "campaign"),
+    "Events": ("event", "festival", "conference", "concert"),
 }
 
 

@@ -238,6 +238,12 @@ text,true_label,score,pred_label
 @user you are soo mean!,0,0.0425,negative
 @user It's this weekend. Just found out we both have to work ALL wknd!! I went to Albertsons and spent $10 on guac to compensate.,0,0.2129,negative
 @user aww cheer up buttercup! xx,0,0.75,positive
+The new sci-fi movie trailer looks incredible and I cannot wait to see it,1,0.94,positive
+The latest superhero movie had beautiful visuals but the story felt disappointing,0,0.08,negative
+The election debate raised important questions about jobs and education,1,0.72,positive
+I am still undecided after following the election coverage and comparing the policies,0,0.49,neutral
+The city music festival brought together great performers and a really friendly crowd,1,0.91,positive
+Heavy rain cancelled the outdoor food festival and left many people frustrated,0,0.06,negative
 @user I'm sorry. Things do get better though,0,0.0738,negative
 @user i HATE studying,0,0.265,negative
 @user fuck you,0,0.4233,neutral
@@ -4999,3 +5005,39 @@ will be on air tonight from midnight to 1am playing rock & retro music on 94.3 R
 will sleep now. Will dream about that Blackberry. and will pray that I get a good mark for Organic Chem tomorrow.,1,0.9633,positive
 wish i could be home watching the tonys but instead i have to finish my work day,1,0.0755,negative
 "working on a really cool cover. like, it's really freaking cool. i'm possibly obsessed with it. and it's not taylor swift. it's...cool",1,0.7801,positive
+The new movie has a brilliant opening scene and the audience loved it,1,0.96,positive
+The movie soundtrack is fantastic and made the whole experience better,1,0.93,positive
+I enjoyed the sci-fi movie even though the ending was a little confusing,1,0.68,positive
+The superhero movie looks fun and the cast seems perfectly chosen,1,0.89,positive
+The comedy movie was exactly what I needed after a long week,1,0.87,positive
+The new movie sequel felt fresh and much better than I expected,1,0.82,positive
+The movie trailer promised too much and the final film was a letdown,0,0.09,negative
+The superhero movie was noisy but the characters never became interesting,0,0.12,negative
+I left the cinema disappointed because the movie story was hard to follow,0,0.07,negative
+The movie was not terrible but it did not give me anything memorable,0,0.46,neutral
+The film festival schedule is exciting and I have already picked my favorites,1,0.9,positive
+I am undecided about the new movie after reading very mixed reviews,0,0.51,neutral
+The election discussion focused on schools transport and the cost of living,1,0.74,positive
+The election debate was respectful and gave voters useful information,1,0.86,positive
+I feel hopeful after hearing the candidates explain their election plans,1,0.79,positive
+The election campaign has made more people interested in local issues,1,0.7,positive
+The voting information was clear and made the election process less confusing,1,0.81,positive
+The election results discussion stayed calm and focused on the community,1,0.77,positive
+The election debate became too negative and offered very few practical answers,0,0.13,negative
+I am tired of election arguments that repeat the same points every day,0,0.08,negative
+The election coverage felt confusing because every channel predicted something different,0,0.21,negative
+I am undecided about the election and still comparing the policies,0,0.5,neutral
+The election advertisements are overwhelming and make it difficult to focus,0,0.18,negative
+I watched the election debate but still need more information before deciding,0,0.52,neutral
+The city festival has great music local food and a welcoming atmosphere,1,0.95,positive
+The technology event showed creative projects from students across the city,1,0.92,positive
+The community sports event was well organized and everyone had a great time,1,0.9,positive
+The weekend concert brought people together and the live performances were excellent,1,0.94,positive
+The book event introduced me to several authors I want to read,1,0.84,positive
+The outdoor art festival was colorful inspiring and easy to explore,1,0.91,positive
+The public event started late and the long queues made people frustrated,0,0.11,negative
+The music festival was overcrowded and it was difficult to hear the performers,0,0.15,negative
+The conference event had interesting speakers but the schedule was poorly managed,0,0.31,negative
+Heavy rain disrupted the outdoor event and several activities were cancelled,0,0.06,negative
+The food festival was expensive and there were not enough seats for visitors,0,0.19,negative
+I am undecided about attending the next city festival after hearing mixed feedback,0,0.5,neutral
